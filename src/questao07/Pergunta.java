@@ -1,4 +1,4 @@
-package quiz;
+package questao07;
 
 public class Pergunta {
 	private String enunciado;
