@@ -3,16 +3,10 @@ package questao09;
 public class Funcionario {
 	private String nome;
 	private double salarioBruto;
-	private double bonus;
-	private double desconto;
-	private double salarioLiquido;
 
-	public Funcionario(String nome, double salarioBruto, double bonus, double desconto, double salarioLiquido) {
+	public Funcionario(String nome, double salarioBruto) {
 		this.nome = nome;
 		this.salarioBruto = salarioBruto;
-		this.bonus = bonus;
-		this.desconto = desconto;
-		this.salarioLiquido = salarioLiquido;
 	}
 
 	public String getNome() {
@@ -32,33 +26,30 @@ public class Funcionario {
 	}
 
 	public double getBonus() {
-		return bonus;
-	}
+		if (this.salarioBruto <= 1000) {
+			return salarioBruto * 0.2;
+		} else if (salarioBruto <= 2000) {
+			return salarioBruto * 0.1;
+		} else {
+			return 0;
+		}
 
-	public void setBonus(double bonus) {
-		this.bonus = bonus;
 	}
 
 	public double getDesconto() {
-		return desconto;
-	}
-
-	public void setDesconto(double desconto) {
-		this.desconto = desconto;
+		if (this.salarioBruto > 2000) {
+			return (this.salarioBruto * 0.1);
+		} else {
+			return 0;
+		}
 	}
 
 	public double getSalarioLiquido() {
-		return salarioLiquido;
-	}
-
-	public void setSalarioLiquido(double salarioLiquido) {
-		this.salarioLiquido = salarioLiquido;
-	}
-
-	@Override
-	public String toString() {
-		return "Nome: " + nome + "\nSalário Bruto: " + salarioBruto + "\nBônus: " + bonus + "\nDesconto: " + desconto
-				+ "\nSalário Líquido: " + salarioLiquido;
+		if (this.salarioBruto > 2000) {
+			return this.salarioBruto - getDesconto();
+		} else {
+			return this.salarioBruto + getBonus();
+		}
 	}
 
 }
