@@ -67,7 +67,7 @@ public class Produto {
 
 	@Override
 	public String toString() {
-		SimpleDateFormat formatdata = new SimpleDateFormat("dd/MM/yyyy");// 15/04/2010
+		SimpleDateFormat formatdata = new SimpleDateFormat("dd/MM/yyyy");
 		return String.format("%d - %s - %s - R$%.2f - %s", this.id, this.nome, this.descricao, this.desconto,
 				formatdata.format(this.dataInicio));
 	}
