@@ -3,6 +3,14 @@ package s2questao09;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/*create table produto(
+id int primary key auto_increment,
+nome varchar(100),
+descricao varchar(255),
+desconto float,
+inicio timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+);*/
+
 public class Produto {
 	private int id;
 	private String nome;

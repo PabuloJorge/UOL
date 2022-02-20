@@ -1,5 +1,11 @@
 package s2questao10;
 
+
+/*create table cliente(
+id int primary key auto_increment,
+nome varchar(100),
+sentimento varchar(15)
+);*/
 public class Cliente {
 	private int id;
 	private String nome;
